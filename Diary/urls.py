@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+from Diary import views
 
 urlpatterns = [
-    path('<int:pk>/', views.single_post_page),
-    path('',views.index)
+    path('<int:pk>/',views.memory_detail),
+    path('',views.memory_list),
+    path('new/', views.diary_new), 
 ]

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary</title>
+</head>
+<body>
+    <h1>Diary</h1>
+
+    {% for post in memory_list %}
+        <hr/>
+        <h2>
+            <a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <h3>{{ post.created_at }}</h3>
+        <h4>{{ post.updated_at }}</h4>
+        <p>{{ post.content }}</p>
+    {% endfor %}
+
+    <hr/>
+    <a href="/Diary/new/">새 포스팅 쓰기</a>
+
+</body>
+</html>
